@@ -1,0 +1,27 @@
+@import "@/scss/_Colors.scss";
+
+@media only screen and (max-width: 600px) {
+  .background {
+    background     : #fff;
+    color          : #fff;
+    min-height     : calc(100vh - 8.25rem - 3.25rem);
+    width          : 100%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    background-size: cover !important;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .background {
+    background     : #fff;
+    color          : #fff;
+    min-height     : calc(100vh - 8.25rem - 3.25rem);
+    width          : 100%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    background-size: cover !important;
+  }
+}
