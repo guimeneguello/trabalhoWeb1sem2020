@@ -27,7 +27,7 @@
     </b-navbar>
     <b-navbar>
       <template slot="brand">
-        <router-link to="/products">
+        <router-link to="/">
           <b-button class="btn-login">Home</b-button>
         </router-link>
         <router-link to="/products">
