@@ -25,4 +25,4 @@
   color: #42b983;
 }
 </style>
-<style src="@/scss/_columns.scss" lang="scss"></style>
+<style src="@/scss/_columns.scss" lang="scss" />

@@ -3,4 +3,4 @@
 
   </div>
 </template>
-<style src="@/scss/_Content.scss" lang="scss"></style>
+<style src="@/scss/_Content.scss" lang="scss" />
