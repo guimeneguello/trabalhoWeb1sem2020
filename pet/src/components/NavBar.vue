@@ -6,8 +6,10 @@
           <p>Welcome to The Best Pets Care at Melboune</p>
         </div>
         <div class="column end login-area">
-            <b-button class="btn-login">Login</b-button>
-            <b-button class="btn-login">Register</b-button>
+            <b-button class="btn-login"
+            @click="isModalActive = true, isLogin=true, isRegister=false">Login</b-button>
+            <b-button class="btn-login"
+            @click="isModalActive = true, isLogin=false, isRegister=true">Register</b-button>
         </div>
       </b-navbar-item>
 
@@ -42,6 +44,31 @@
         <b-button class="btn-login">Marque um Serviço</b-button>
       </b-navbar-item>
     </b-navbar>
+    <b-modal :active.sync="isModalActive">
+      <Login v-if="isLogin" :opened="isModalActive"/>
+      <Register v-else-if="isRegister"  :opened="isModalActive"/>
+    </b-modal>
   </div>
 </template>
-<style src="@/scss/_NavBar.scss" lang="scss"></style>
+
+<script>
+import Login from '@/components/Login.vue'
+import Register from '@/components/Register.vue'
+
+export default {
+  name: 'NavBar',
+  data () {
+    return {
+      isModalActive: false,
+      isLogin: false,
+      isRegister: false
+    }
+  },
+  components: {
+    Login,
+    Register
+  }
+}
+</script>
+
+<style src="@/scss/_NavBar.scss" lang="scss" />
