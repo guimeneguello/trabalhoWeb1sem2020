@@ -37,10 +37,8 @@ export default {
     }
   },
   methods: {
-    login () {
-      var userRegistred = localStorage.getObj('user')
-      localStorage.setItem('name', userRegistred.name)
-      this.opened = false
+    async login () {
+      await this.$store.dispatch('login', this.user)
     }
   }
 }

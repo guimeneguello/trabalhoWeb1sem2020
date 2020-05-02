@@ -12,7 +12,7 @@ export default {
 
       request.onerror = e => {
         console.log('Error opening db', e)
-        // reject(e)
+        reject(e)
       }
 
       request.onsuccess = e => {
@@ -42,22 +42,46 @@ export default {
       store.delete(struct.data.id)
     })
   },
-  async getDatas (struct) {
+  async getDatas (table) {
     const db = await this.getDb()
 
     return new Promise(resolve => {
-      const trans = db.transaction([struct.table], 'readonly')
+      const trans = db.transaction([table], 'readonly')
       trans.oncomplete = () => {
-        resolve(struct.table)
+        resolve(table)
       }
 
-      const store = trans.objectStore(struct.table)
+      const store = trans.objectStore(table)
       const datas = []
 
       store.openCursor().onsuccess = e => {
         const cursor = e.target.result
         if (cursor) {
           datas.push(cursor.value)
+          cursor.continue()
+        }
+      }
+    })
+  },
+
+  async login (user) {
+    const db = await this.getDb()
+    const table = 'users'
+
+    return new Promise(resolve => {
+      const trans = db.transaction([table], 'readonly')
+      trans.oncomplete = () => {
+        resolve(table)
+      }
+
+      const store = trans.objectStore(table)
+
+      store.openCursor().onsuccess = e => {
+        const cursor = e.target.result
+        if (cursor) {
+          if (cursor.value.email === user.email) {
+            localStorage.setObj('user', cursor.value)
+          }
           cursor.continue()
         }
       }
