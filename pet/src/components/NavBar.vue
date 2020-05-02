@@ -2,7 +2,7 @@
   <div class="conjunto_navbar">
     <b-navbar>
       <template slot="brand">
-        <div class="clearfix shared_content" id="u13465-4" data-content-guid="u13465-4_content">
+        <div class="clearfix shared_content">
           <p>Welcome to The Best Pets Care at Melboune</p>
         </div>
       </template>
@@ -13,8 +13,8 @@
       </template>
       <template slot="end">
         <div class="clearfix">
-          <p id="u13464-2">
-            <span id="u13464">Call Today :</span>
+          <p>
+            <span>Call Today :</span>
           </p>
           <p>(+62) 254 0124</p>
         </div>
