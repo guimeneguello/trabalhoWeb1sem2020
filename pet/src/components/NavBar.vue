@@ -1,32 +1,35 @@
 <template>
   <div class="conjunto_navbar">
     <b-navbar>
-      <template slot="brand">
-        <div class="clearfix shared_content">
+      <b-navbar-item slot="brand" class="columns slogan">
+        <div class="clearfix column is-8-mobile">
           <p>Welcome to The Best Pets Care at Melboune</p>
         </div>
-      </template>
-    </b-navbar>
-    <b-navbar>
-      <template slot="brand">
-        <img src />
-      </template>
-      <template slot="end">
-        <div class="clearfix">
-          <p>
-            <span>Call Today :</span>
-          </p>
-          <p>(+62) 254 0124</p>
+        <div class="column end login-area">
+            <b-button class="btn-login">Login</b-button>
+            <b-button class="btn-login">Register</b-button>
         </div>
+      </b-navbar-item>
 
-        <div class="clearfix">
-          <p>Open Hours :</p>
-          <p>Mon - Fri : 09:00am - 20:00pm</p>
+      <b-navbar-item slot="brand" class="columns infos">
+        <img class="column is-4-mobile is-3-desktop" src />
+        <div class="column is-offset-5 is-8-mobile is-4-desktop">
+          <div class="columns">
+            <div class="column">
+              <p>
+                <span>Call Today :</span>
+              </p>
+              <p>(+62) 254 0124</p>
+            </div>
+            <div class="column">
+              <p>Open Hours :</p>
+              <p>Mon - Fri : 09:00am - 20:00pm</p>
+            </div>
+          </div>
         </div>
-      </template>
-    </b-navbar>
-    <b-navbar>
-      <template slot="brand">
+      </b-navbar-item>
+
+      <b-navbar-item slot="end" class="menu">
         <router-link to="/">
           <b-button class="btn-login">Home</b-button>
         </router-link>
@@ -36,10 +39,8 @@
         <router-link to="/services">
           <b-button class="btn-login">Serviços</b-button>
         </router-link>
-      </template>
-      <template slot="end">
         <b-button class="btn-login">Marque um Serviço</b-button>
-      </template>
+      </b-navbar-item>
     </b-navbar>
   </div>
 </template>
