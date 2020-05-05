@@ -3,15 +3,15 @@
 </template>
 <script>
 export default {
-  name: "Content",
-  data() {
+  name: 'Content',
+  data () {
     return {
       user: {}
-    };
+    }
   },
-  created() {
-    this.user = localStorage.getObj("user");
+  created () {
+    this.user = localStorage.getObj('user')
   }
-};
+}
 </script>
 <style src="@/scss/_Content.scss" lang="scss" />
