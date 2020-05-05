@@ -45,8 +45,8 @@
       </b-navbar-item>
     </b-navbar>
     <b-modal :active.sync="isModalActive">
-      <Login v-if="isLogin" :opened="isModalActive"/>
-      <Register v-else-if="isRegister"  :opened="isModalActive"/>
+      <Login v-if="isLogin" :opened="isModalActive" @closeModal="closeModal"/>
+      <Register v-else-if="isRegister"  :opened="isModalActive" @closeModal="closeModal"/>
     </b-modal>
   </div>
 </template>
@@ -67,6 +67,11 @@ export default {
   components: {
     Login,
     Register
+  },
+  methods: {
+    closeModal (payload) {
+      this.isModalActive = payload.opened
+    }
   }
 }
 </script>

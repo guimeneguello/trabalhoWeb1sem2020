@@ -56,8 +56,10 @@ export default {
     }
   },
   methods: {
-    async register () {
-      await this.$store.dispatch('saveData', this.struct)
+    register () {
+      this.$store.dispatch('saveData', this.struct)
+      this.opened = false
+      this.$emit('closeModal', { opened: this.opened })
     }
   }
 }

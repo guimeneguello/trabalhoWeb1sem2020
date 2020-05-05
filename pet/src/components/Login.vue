@@ -37,8 +37,10 @@ export default {
     }
   },
   methods: {
-    async login () {
-      await this.$store.dispatch('login', this.user)
+    login () {
+      this.$store.dispatch('login', this.user)
+      this.opened = false
+      this.$emit('closeModal', { opened: this.opened })
     }
   }
 }
