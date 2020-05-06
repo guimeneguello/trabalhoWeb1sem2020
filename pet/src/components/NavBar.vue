@@ -39,11 +39,16 @@
         <router-link to="/services">
           <b-button class="btn-login">Serviços</b-button>
         </router-link>
+        <router-link v-if="user.cargo == 'client'" to="/pets">
+          <b-button class="btn-login">Pets</b-button>
+        </router-link>
       </b-navbar-item>
 
       <b-navbar-item slot="end" class="menu">
         <Apoiment v-if="user.cargo == 'client'" :user="user"/>
-        <Service v-if="user.cargo == 'admin'" :user="user"/>
+        <RegisterData v-if="user.cargo == 'client'" :user="user" colection='pets' stringColection='Pet'/>
+        <RegisterData v-if="user.cargo == 'admin'" :user="user" colection='services' stringColection='Serviço'/>
+        <RegisterData v-if="user.cargo == 'admin'" :user="user" colection='products' stringColection='Produto'/>
       </b-navbar-item>
     </b-navbar>
   </div>
@@ -53,7 +58,7 @@
 import Login from '@/components/Login.vue'
 import Register from '@/components/Register.vue'
 import Apoiment from '@/components/Apoiment.vue'
-import Service from '@/components/Service.vue'
+import RegisterData from '@/components/RegisterData.vue'
 
 export default {
   name: 'NavBar',
@@ -66,7 +71,7 @@ export default {
     Login,
     Register,
     Apoiment,
-    Service
+    RegisterData
   },
   created () {
     this.user = localStorage.getObj('user')

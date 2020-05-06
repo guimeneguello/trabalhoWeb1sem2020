@@ -1,11 +1,11 @@
 <template>
   <div>
-    <b-button class="btn-login" @click="isOpened=true">Cadastre um Serviço</b-button>
+    <b-button class="btn-login" @click="isOpened=true">Cadastre um {{ stringColection }}</b-button>
     <b-modal :active.sync="isOpened">
       <div class="card">
         <div class="card-content">
           <div class="content">
-            <h1>Service</h1>
+            <h1>{{ stringColection }}</h1>
             <h3></h3>
 
             <b-field label="Name">
@@ -23,7 +23,7 @@
               <img :src="struct.data.previewImage" class="uploading-image"/>
             </b-field>
 
-            <button @click="service()" class="button is-primary">Service</button>
+            <button @click="save()" class="button is-primary">Salvar</button>
           </div>
         </div>
       </div>
@@ -34,13 +34,13 @@
 <script>
 
 export default {
-  name: 'Service',
-  props: ['user'],
+  name: 'RegisterData',
+  props: ['user', 'colection', 'stringColection'],
   data () {
     return {
       isOpened: false,
       struct: {
-        table: 'services',
+        table: this.colection,
         data: {
           previewImage: null
         }
@@ -48,7 +48,7 @@ export default {
     }
   },
   methods: {
-    service () {
+    save () {
       this.$store.dispatch('saveData', this.struct)
       this.isOpened = false
     },

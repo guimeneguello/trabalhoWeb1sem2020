@@ -4,7 +4,6 @@
   .background {
     background     : #fff;
     color          : #fff;
-    min-height     : calc(100vh - 8.25rem - 3.25rem);
     width          : 100%;
     display        : flex;
     justify-content: center;
@@ -17,13 +16,16 @@
   .background {
     background     : #fff;
     color          : #fff;
-    min-height     : calc(100vh - 8.25rem - 3.25rem);
     width          : 100%;
     display        : flex;
     justify-content: center;
     align-items    : center;
     background-size: cover !important;
   }
+}
+
+.body-content{
+  min-height     : calc(100vh - 8.25rem - 3.25rem);
 }
 
 .shadow{
@@ -46,11 +48,13 @@
 .service-info{
   color: #4c4c4c;
   padding: 20px;
+  min-height: 200px;
+  border-radius: 15px;
   img{
     margin-right: 15px;
   }
   h1{
-    font-size: 24px;
+    font-size: 20px;
     color: $cor-principal;
     text-transform: uppercase;
     display: block;
@@ -67,4 +71,11 @@
     margin: 20px 0 0;
     font-weight: 300;
   }
+}
+
+.body-content h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
 }
