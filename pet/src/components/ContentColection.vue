@@ -2,12 +2,12 @@
   <div>
     <h1>{{ stringColection }}</h1>
     <div class="columns flex-wrap">
-      <div class="column is-12-mobile is-3 service-card" v-for="dataSingle in datasColection" :key="dataSingle.id">
-        <div class="service-info shadow">
+      <div class="column is-12-mobile is-3 collection-card" v-for="dataSingle in datasColection" :key="dataSingle.id">
+        <div class="collection-info shadow">
           <h1>{{ dataSingle.name }}</h1>
-          <img :src="dataSingle.previewImage" class="service-image"/>
+          <img :src="dataSingle.previewImage" class="collection-image"/>
           <p>{{ dataSingle.descricao }}</p>
-          <div v-if="user.cargo == 'admin'" class="service-bottons">
+          <div v-if="user.cargo == permission" class="collection-bottons">
             <b-button color="red" @click="deletar(dataSingle)">Delete</b-button>
             <!-- b-button @click="editar(service)">Edit</b-button -->
           </div>
@@ -19,7 +19,7 @@
 <script>
 export default {
   name: 'ContentColection',
-  props: ['colection', 'stringColection'],
+  props: ['colection', 'stringColection', 'permission'],
   data () {
     return {
       user: {},

@@ -34,18 +34,18 @@
   box-shadow: 2px 3px 5px 0px rgba(146, 146, 146, 0.75);
 }
 
-.service-image{
+.collection-image{
   float: left;
   display: table-cell;
   border-radius: 50%;
   height: 100px;
   width: 100px;
 }
-.service-card{
+.collection-card{
   padding: 30px !important;
 }
 
-.service-info{
+.collection-info{
   color: #4c4c4c;
   padding: 20px;
   min-height: 200px;
@@ -70,5 +70,12 @@
     line-height: 1.5;
     margin: 20px 0 0;
     font-weight: 300;
+  }
+
+  .collection-bottons{
+    button.button{
+      background-color: $red-2;
+      color: $yellow-1;
+    }
   }
 }

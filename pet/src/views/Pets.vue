@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <NavBar />
-    <ContentColection class="body-content" colection='pets' stringColection="Pets"/>
+    <ContentColection class="body-content" colection='pets' stringColection='Pets' permission='client'/>
     <Footer />
   </div>
 </template>
