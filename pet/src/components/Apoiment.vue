@@ -5,7 +5,7 @@
       <div class="card">
         <div class="card-content">
           <div class="content">
-            <h1>Apoiment</h1>
+            <h1>Agendamento</h1>
             <h3></h3>
 
             <b-field label="Data">
@@ -27,7 +27,7 @@
               </b-select>
             </b-field>
 
-            <button @click="apoiment()" class="button is-primary">Apoiment</button>
+            <button @click="apoiment()" class="button is-primary">Agendar</button>
           </div>
         </div>
       </div>

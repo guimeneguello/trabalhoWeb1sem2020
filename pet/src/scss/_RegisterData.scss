@@ -8,6 +8,6 @@ img.uploading-image {
     display: block;
     width: 100px;
     height: 100px;
-    max-height: 100px;
+    max-height: 100px !important;
     border-radius: 50%;
 }

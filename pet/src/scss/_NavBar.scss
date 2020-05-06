@@ -1,5 +1,102 @@
 @import "@/scss/_Colors.scss";
 
+a, a:hover{
+  margin: unset !important;
+  cursor: default;
+  text-decoration: none;
+}
+
+button.button {
+  border: unset;
+}
+
+a.navbar-item.columns.slogan, a.navbar-item.columns.slogan:hover {
+  background-color: $cor-secundaria;
+  color: $yellow-1;
+  button.button {
+    background-color: $cor-principal;
+    color: $yellow-1;
+    margin: 5px 15px 5px 0;
+    border-radius: unset;
+    width: 95px;
+    padding-bottom: 0.375em;
+    padding-top: 0.375em;
+  }
+
+  p{
+    padding: 0 20px;
+  }
+
+  .column.end.login-area {
+    margin-right: 30px;
+  }
+}
+
+a.navbar-item.columns.infos p {
+  font-size: 24px;
+  line-height: 29px;
+  color: $cor-secundaria;
+  text-align: left;
+  font-weight: 700;
+  vertical-align: inherit;
+
+  span{
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+.navbar-menu{
+  background-color: $cor-principal;
+
+  .navbar-start {
+    margin-left: 10px;
+  }
+
+  a.navbar-item.menu {
+    padding: 0;
+  }
+
+  a.navbar-item.menu, a.navbar-item.menu:hover, .navbar-end, .navbar-end:hover{
+    background-color: $cor-principal;
+  }
+
+  button.button {
+    background-color: $cor-principal;
+    color: $yellow-1;
+    margin: 0;
+    border-radius: unset;
+    height: 45px;
+    border-bottom: 5px $cor-principal solid;
+    padding-bottom: calc(0.375em - 5px);
+    padding-top: 0.375em;
+  }
+
+  a.router-link-exact-active.router-link-active{
+    button.button{
+      color: $cor-secundaria;
+      font-weight: 300px;
+    }
+  }
+
+  a.navbar-item.menu button.button:hover{
+    color: $cor-secundaria;
+    border-bottom: 5px $cor-secundaria solid;
+  }
+
+  .navbar-end button.button{
+    background-color: $cor-secundaria;
+    margin-right: 45px;
+    border-bottom: 5px $cor-secundaria solid;
+  }
+
+  .navbar-end button.button:hover{
+    color: $cor-principal !important;
+    border-bottom: 5px $cor-principal solid !important;
+
+  }
+}
+
 nav.navbar{
   display: block;
 }

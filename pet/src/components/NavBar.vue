@@ -22,7 +22,7 @@
               <p>(+55) 16 9999 9999</p>
             </div>
             <div class="column">
-              <p>Horário de funcionamento:</p>
+              <p><span>Horário de funcionamento:</span></p>
               <p>Seg - Sex : 09:00 - 20:00</p>
             </div>
           </div>
