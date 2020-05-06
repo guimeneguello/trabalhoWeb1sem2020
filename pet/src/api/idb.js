@@ -25,6 +25,9 @@ export default {
         const db = e.target.result
         db.createObjectStore('users', { autoIncrement: true, keyPath: 'id' })
         db.createObjectStore('pets', { autoIncrement: true, keyPath: 'id' })
+        db.createObjectStore('services', { autoIncrement: true, keyPath: 'id' })
+        db.createObjectStore('apoiments', { autoIncrement: true, keyPath: 'id' })
+        db.createObjectStore('products', { autoIncrement: true, keyPath: 'id' })
       }
     })
   },

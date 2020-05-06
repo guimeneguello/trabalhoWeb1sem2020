@@ -39,7 +39,7 @@
         <router-link to="/services">
           <b-button class="btn-login">Serviços</b-button>
         </router-link>
-        <b-button class="btn-login">Marque um Serviço</b-button>
+        <Apoiment v-if="user.name.length > 0" :user="user"/>
       </b-navbar-item>
     </b-navbar>
   </div>
@@ -48,6 +48,7 @@
 <script>
 import Login from '@/components/Login.vue'
 import Register from '@/components/Register.vue'
+import Apoiment from '@/components/Apoiment.vue'
 
 export default {
   name: 'NavBar',
@@ -58,7 +59,8 @@ export default {
   },
   components: {
     Login,
-    Register
+    Register,
+    Apoiment
   },
   created () {
     this.user = localStorage.getObj('user')
