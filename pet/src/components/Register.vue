@@ -8,7 +8,7 @@
             <h1>Cadastro</h1>
             <h3></h3>
 
-          <b-field label="Cargo">
+          <b-field v-if="user.cargo == 'admin'" label="Cargo">
               <b-select
               placeholder="Selecione um cargo"
               expanded
@@ -18,7 +18,7 @@
               <option key="admin" value="admin">Administrador</option>
               <option key="client" value="client">Cliente</option>
             </b-select>
-            </b-field>
+          </b-field>
           <b-field label="Nome">
               <b-input
                 type="name"
