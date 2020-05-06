@@ -2,7 +2,7 @@
   <div class="conjunto_navbar">
     <b-navbar>
       <b-navbar-item slot="brand" class="columns slogan">
-        <div class="clearfix column is-8-mobile">
+        <div class="clearfix column is-6-mobile">
           <p>Welcome to The Best Pets Care at Melboune</p>
         </div>
         <div class="column end login-area">
@@ -29,7 +29,7 @@
         </div>
       </b-navbar-item>
 
-      <b-navbar-item slot="end" class="menu">
+      <b-navbar-item slot="start" class="menu">
         <router-link to="/">
           <b-button class="btn-login">Home</b-button>
         </router-link>
@@ -39,7 +39,11 @@
         <router-link to="/services">
           <b-button class="btn-login">Serviços</b-button>
         </router-link>
+      </b-navbar-item>
+
+      <b-navbar-item slot="end" class="menu">
         <Apoiment v-if="user.cargo == 'client'" :user="user"/>
+        <Service v-if="user.cargo == 'admin'" :user="user"/>
       </b-navbar-item>
     </b-navbar>
   </div>
@@ -49,6 +53,7 @@
 import Login from '@/components/Login.vue'
 import Register from '@/components/Register.vue'
 import Apoiment from '@/components/Apoiment.vue'
+import Service from '@/components/Service.vue'
 
 export default {
   name: 'NavBar',
@@ -60,7 +65,8 @@ export default {
   components: {
     Login,
     Register,
-    Apoiment
+    Apoiment,
+    Service
   },
   created () {
     this.user = localStorage.getObj('user')
