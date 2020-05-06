@@ -25,3 +25,46 @@
     background-size: cover !important;
   }
 }
+
+.shadow{
+  -webkit-box-shadow: 2px 3px 5px 0px rgba(146, 146, 146, 0.75);
+  -moz-box-shadow: 2px 3px 5px 0px rgba(146, 146, 146, 0.75);
+  box-shadow: 2px 3px 5px 0px rgba(146, 146, 146, 0.75);
+}
+
+.service-image{
+  float: left;
+  display: table-cell;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+.service-card{
+  padding: 30px !important;
+}
+
+.service-info{
+  color: #4c4c4c;
+  padding: 20px;
+  img{
+    margin-right: 15px;
+  }
+  h1{
+    font-size: 24px;
+    color: $cor-principal;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 300;
+    margin: 0 0 15px;
+    line-height: 1.2;
+    text-align: center;
+  }
+  p{
+    text-align: justify;
+    font-size: 18px;
+    color: #707676;
+    line-height: 1.5;
+    margin: 20px 0 0;
+    font-weight: 300;
+  }
+}
