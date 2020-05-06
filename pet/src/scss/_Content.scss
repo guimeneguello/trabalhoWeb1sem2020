@@ -1,27 +1,19 @@
 @import "@/scss/_Colors.scss";
 
+.background {
+  background     : #fff;
+  color          : #707676;
+  width          : 100%;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  background-size: cover !important;
+}
+
 @media only screen and (max-width: 600px) {
-  .background {
-    background     : #fff;
-    color          : #fff;
-    width          : 100%;
-    display        : flex;
-    justify-content: center;
-    align-items    : center;
-    background-size: cover !important;
-  }
 }
 
 @media only screen and (min-width: 600px) {
-  .background {
-    background     : #fff;
-    color          : #fff;
-    width          : 100%;
-    display        : flex;
-    justify-content: center;
-    align-items    : center;
-    background-size: cover !important;
-  }
 }
 
 .body-content{

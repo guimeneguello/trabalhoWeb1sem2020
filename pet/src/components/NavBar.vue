@@ -3,7 +3,7 @@
     <b-navbar>
       <b-navbar-item slot="brand" class="columns slogan">
         <div class="clearfix column is-6-mobile">
-          <p>Welcome to The Best Pets Care at Melboune</p>
+          <p>Bem-vindo {{ user.name }} ao melhor atendimento de animais de estimação em São Carlos</p>
         </div>
         <div class="column end login-area">
             <Login :user="user"/>
@@ -17,13 +17,13 @@
           <div class="columns">
             <div class="column">
               <p>
-                <span>Call Today :</span>
+                <span>Ligue Hoje:</span>
               </p>
-              <p>(+62) 254 0124</p>
+              <p>(+55) 16 9999 9999</p>
             </div>
             <div class="column">
-              <p>Open Hours :</p>
-              <p>Mon - Fri : 09:00am - 20:00pm</p>
+              <p>Horário de funcionamento:</p>
+              <p>Seg - Sex : 09:00 - 20:00</p>
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@
 
       <b-navbar-item slot="start" class="menu">
         <router-link to="/">
-          <b-button class="btn-login">Home</b-button>
+          <b-button class="btn-login">Início</b-button>
         </router-link>
         <router-link to="/products">
           <b-button class="btn-login">Produtos</b-button>

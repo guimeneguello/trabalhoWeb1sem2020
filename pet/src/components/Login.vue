@@ -1,22 +1,22 @@
 <template>
   <div class="btn-login" >
-    <b-button v-if="user.name.length > 0" @click="logoff()"> Logoff </b-button>
-    <b-button v-if="user.name.length == 0" @click="isOpened=true"> Login </b-button>
+    <b-button v-if="user.name.length > 0" @click="logoff()"> Sair </b-button>
+    <b-button v-if="user.name.length == 0" @click="isOpened=true"> Entrar </b-button>
     <b-modal :active.sync="isOpened">
     <div class="card">
       <div class="card-content">
         <div class="content">
-          <h1>Login</h1>
+          <h1>Entrar</h1>
           <h3></h3>
 
           <b-field label="Email">
             <b-input type="email" v-model="user.email" name="email"></b-input>
           </b-field>
-          <b-field label="Password">
+          <b-field label="Senha">
             <b-input type="password" v-model="user.password" name="password"></b-input>
           </b-field>
 
-          <button @click="login()" class="button is-primary">Login</button>
+          <button @click="login()" class="button is-primary">Entrar</button>
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@ export default {
       this.$emit('reload')
       this.$buefy.toast.open({
         duration: 5000,
-        message: 'Login realisado com sucesso!',
+        message: 'Login realisado com sucesso, por favor recarregue a pagina!',
         position: 'is-top-right',
         type: 'is-success'
       })

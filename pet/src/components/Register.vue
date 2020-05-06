@@ -1,11 +1,11 @@
 <template>
   <div class="btn-login">
-    <b-button @click="isOpened=true"> Register </b-button>
+    <b-button @click="isOpened=true"> Cadastro </b-button>
     <b-modal :active.sync="isOpened">
       <div class="card">
         <div class="card-content">
           <div class="content">
-            <h1>Register</h1>
+            <h1>Cadastro</h1>
             <h3></h3>
 
           <b-field label="Cargo">
@@ -19,7 +19,7 @@
               <option key="client" value="client">Cliente</option>
             </b-select>
             </b-field>
-          <b-field label="Name">
+          <b-field label="Nome">
               <b-input
                 type="name"
                 v-model="struct.data.name"
@@ -33,14 +33,14 @@
                 name="email"
               ></b-input>
             </b-field>
-            <b-field label="Password">
+            <b-field label="Senha">
               <b-input
                 type="password"
                 v-model="struct.data.password"
                 name="password"
               ></b-input>
             </b-field>
-            <b-field label="Repet Password">
+            <b-field label="Senha Novamente">
               <b-input
                 type="password"
                 v-model="struct.data.repet_password"
@@ -48,7 +48,7 @@
               ></b-input>
             </b-field>
 
-            <button @click="register()" class="button is-primary">Register</button>
+            <button @click="register()" class="button is-primary">Cadastrar</button>
           </div>
         </div>
       </div>

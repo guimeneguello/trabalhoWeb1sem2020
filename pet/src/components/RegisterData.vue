@@ -54,7 +54,7 @@ export default {
       this.$emit('reload')
       this.$buefy.toast.open({
         duration: 5000,
-        message: 'Adicionado com sucesso!',
+        message: 'Adicionado com sucesso, por favor recarregue a pagina!',
         position: 'is-top-right',
         type: 'is-success'
       })
