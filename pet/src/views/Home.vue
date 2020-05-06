@@ -27,11 +27,12 @@ export default {
   created () {
     this.user = localStorage.getObj('user')
     if (this.user == null) {
-      this.user = {}
-      this.user.email = ''
-      this.user.password = ''
-      this.user.name = ''
-      this.user.cargo = ''
+      this.user = {
+        email: '',
+        password: '',
+        name: '',
+        cargo: ''
+      }
     }
   }
 }

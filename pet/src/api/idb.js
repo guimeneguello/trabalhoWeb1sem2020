@@ -56,6 +56,7 @@ export default {
       store.delete(struct.data.id)
     })
   },
+
   async getDatas (table) {
     const db = await this.getDb()
 
@@ -74,6 +75,33 @@ export default {
           datas.push(cursor.value)
           cursor.continue()
           localStorage.setObj(table, datas)
+        }
+      }
+    })
+  },
+
+  async getDatasClient (table) {
+    const db = await this.getDb()
+
+    return new Promise(resolve => {
+      const trans = db.transaction([table], 'readonly')
+      trans.oncomplete = () => {
+        resolve(table)
+      }
+
+      const store = trans.objectStore(table)
+      var datas = []
+      localStorage.setObj(table, datas)
+      var user = localStorage.getObj('user')
+
+      store.openCursor().onsuccess = e => {
+        var cursor = e.target.result
+        if (cursor) {
+          if (cursor.value.user_id === user.id) {
+            datas.push(cursor.value)
+            localStorage.setObj(table, datas)
+          }
+          cursor.continue()
         }
       }
     })

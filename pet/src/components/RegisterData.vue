@@ -50,7 +50,7 @@ export default {
   methods: {
     save () {
       if (this.user.cargo === 'client') {
-        this.struct.data.client_id = this.user.id
+        this.struct.data.user_id = this.user.id
       }
       this.$store.dispatch('saveData', this.struct)
       this.isOpened = false

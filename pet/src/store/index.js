@@ -17,7 +17,12 @@ export default new Vuex.Store({
     user: localStorage.getItem('user')
   },
   getters: {
-    user: state => state.user,
+    user: state => state.user ? state.user : {
+      email: '',
+      password: '',
+      name: '',
+      cargo: ''
+    },
     services: state => state.tables.services,
     users: state => state.tables.users,
     pets: state => state.tables.pets,
@@ -33,6 +38,10 @@ export default new Vuex.Store({
     async getDatas (context, table) {
       context.state.tables[table] = []
       await idb.getDatas(table)
+    },
+    async getDatasClient (context, table) {
+      context.state.tables[table] = []
+      await idb.getDatasClient(table)
     },
     async saveData (context, struct) {
       await idb.saveData(struct)
