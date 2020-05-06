@@ -66,13 +66,14 @@ export default {
       }
 
       const store = trans.objectStore(table)
-      const datas = []
+      var datas = []
 
       store.openCursor().onsuccess = e => {
-        const cursor = e.target.result
+        var cursor = e.target.result
         if (cursor) {
           datas.push(cursor.value)
           cursor.continue()
+          localStorage.setObj(table, datas)
         }
       }
     })

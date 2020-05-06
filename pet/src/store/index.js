@@ -7,11 +7,22 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    tables: [],
+    tables: {
+      services: localStorage.getItem('services'),
+      users: localStorage.getItem('users'),
+      pets: localStorage.getItem('pets'),
+      products: localStorage.getItem('products'),
+      apoiments: localStorage.getItem('apoiments')
+    },
     user: localStorage.getItem('user')
   },
   getters: {
-    user: state => state.user
+    user: state => state.user,
+    services: state => state.tables.services,
+    users: state => state.tables.users,
+    pets: state => state.tables.pets,
+    products: state => state.tables.products,
+    apoiments: state => state.tables.apoiments
   },
   mutations: {},
   actions: {
@@ -21,10 +32,7 @@ export default new Vuex.Store({
     },
     async getDatas (context, table) {
       context.state.tables[table] = []
-      const datas = await idb.getDatas(table)
-      datas.forEach(c => {
-        context.state.tables[table].push(c)
-      })
+      await idb.getDatas(table)
     },
     async saveData (context, struct) {
       await idb.saveData(struct)
