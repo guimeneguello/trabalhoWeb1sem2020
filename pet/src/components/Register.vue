@@ -59,7 +59,7 @@ export default {
     register () {
       this.$store.dispatch('saveData', this.struct)
       this.opened = false
-      this.$emit('closeModal', { opened: this.opened })
+      this.$emit('closeModalChild', { opened: false })
     }
   }
 }

@@ -40,7 +40,7 @@ export default {
     login () {
       this.$store.dispatch('login', this.user)
       this.opened = false
-      this.$emit('closeModal', { opened: this.opened })
+      this.$emit('closeModalChild', { opened: false })
     }
   }
 }
