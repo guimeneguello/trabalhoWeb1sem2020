@@ -60,6 +60,12 @@ export default {
     apoiment () {
       this.$store.dispatch('saveData', this.struct)
       this.isOpened = false
+      this.$buefy.toast.open({
+        duration: 5000,
+        message: 'Serviço agendado com sucesso!',
+        position: 'is-top-right',
+        type: 'is-success'
+      })
     }
   }
 }

@@ -37,6 +37,13 @@ export default {
     login () {
       this.isOpened = false
       this.$store.dispatch('login', this.user)
+      this.$emit('reload')
+      this.$buefy.toast.open({
+        duration: 5000,
+        message: 'Login realisado com sucesso!',
+        position: 'is-top-right',
+        type: 'is-success'
+      })
       this.$router.push({ name: 'home' })
     },
     logoff () {

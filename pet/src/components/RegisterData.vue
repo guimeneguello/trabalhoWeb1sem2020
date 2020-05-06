@@ -51,6 +51,13 @@ export default {
     save () {
       this.$store.dispatch('saveData', this.struct)
       this.isOpened = false
+      this.$emit('reload')
+      this.$buefy.toast.open({
+        duration: 5000,
+        message: 'Adicionado com sucesso!',
+        position: 'is-top-right',
+        type: 'is-success'
+      })
     },
     uploadImage (e) {
       const image = e.target.files[0]
@@ -65,4 +72,4 @@ export default {
 }
 </script>
 
-<style src="@/scss/_Service.scss" lang="scss" />
+<style src="@/scss/_RegisterData.scss" lang="scss" />

@@ -76,6 +76,13 @@ export default {
     register () {
       this.isOpened = false
       this.$store.dispatch('saveData', this.struct)
+      this.$buefy.toast.open({
+        duration: 5000,
+        message: 'Usuário adicionado com sucesso!',
+        position: 'is-top-right',
+        type: 'is-success'
+      })
+      this.$emit('reload')
       this.$router.push({ name: 'home' })
     }
   }
