@@ -1,9 +1,11 @@
 <template>
-  <div class="background"></div>
+  <div class="background">
+
+  </div>
 </template>
 <script>
 export default {
-  name: 'Content',
+  name: 'ContentServices',
   data () {
     return {
       user: {}

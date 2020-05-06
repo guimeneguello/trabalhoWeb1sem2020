@@ -1,42 +1,47 @@
 <template>
-  <div class="card">
-    <div class="card-content">
-      <div class="content">
-        <h1>Register</h1>
-        <h3></h3>
+  <div class="btn-login">
+    <b-button @click="isOpened=true"> Register </b-button>
+    <b-modal :active.sync="isOpened">
+      <div class="card">
+        <div class="card-content">
+          <div class="content">
+            <h1>Register</h1>
+            <h3></h3>
 
-       <b-field label="Name">
-          <b-input
-            type="name"
-            v-model="struct.data.name"
-            name="text"
-          ></b-input>
-        </b-field>
-       <b-field label="Email">
-          <b-input
-            type="email"
-            v-model="struct.data.email"
-            name="email"
-          ></b-input>
-        </b-field>
-        <b-field label="Password">
-          <b-input
-            type="password"
-            v-model="struct.data.password"
-            name="password"
-          ></b-input>
-        </b-field>
-        <b-field label="Repet Password">
-          <b-input
-            type="password"
-            v-model="struct.data.repet_password"
-            name="repet_password"
-          ></b-input>
-        </b-field>
+          <b-field label="Name">
+              <b-input
+                type="name"
+                v-model="struct.data.name"
+                name="text"
+              ></b-input>
+            </b-field>
+          <b-field label="Email">
+              <b-input
+                type="email"
+                v-model="struct.data.email"
+                name="email"
+              ></b-input>
+            </b-field>
+            <b-field label="Password">
+              <b-input
+                type="password"
+                v-model="struct.data.password"
+                name="password"
+              ></b-input>
+            </b-field>
+            <b-field label="Repet Password">
+              <b-input
+                type="password"
+                v-model="struct.data.repet_password"
+                name="repet_password"
+              ></b-input>
+            </b-field>
 
-        <button @click="register()" class="button is-primary">Register</button>
+            <button @click="register()" class="button is-primary">Register</button>
+          </div>
+        </div>
       </div>
-    </div>
+    </b-modal>
   </div>
 </template>
 
@@ -44,9 +49,10 @@
 
 export default {
   name: 'Register',
-  props: ['opened'],
+  props: ['user'],
   data () {
     return {
+      isOpened: false,
       struct: {
         table: 'users',
         data: {
@@ -57,9 +63,9 @@ export default {
   },
   methods: {
     register () {
+      this.isOpened = false
       this.$store.dispatch('saveData', this.struct)
-      this.opened = false
-      this.$emit('closeModalChild', { opened: false })
+      this.$router.push({ name: 'home' })
     }
   }
 }

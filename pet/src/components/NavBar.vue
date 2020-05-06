@@ -6,10 +6,8 @@
           <p>Welcome to The Best Pets Care at Melboune</p>
         </div>
         <div class="column end login-area">
-            <b-button class="btn-login"
-            @click="isModalActive = true, isLogin=true, isRegister=false">Login</b-button>
-            <b-button class="btn-login"
-            @click="isModalActive = true, isLogin=false, isRegister=true">Register</b-button>
+            <Login :user="user"/>
+            <Register :user="user"/>
         </div>
       </b-navbar-item>
 
@@ -44,10 +42,6 @@
         <b-button class="btn-login">Marque um Serviço</b-button>
       </b-navbar-item>
     </b-navbar>
-    <b-modal :active.sync="isModalActive">
-      <Login v-if="isLogin" :opened="isModalActive" @closeModalChild="closeModalMaster"/>
-      <Register v-else-if="isRegister"  :opened="isModalActive" @closeModalChild="closeModalMaster"/>
-    </b-modal>
   </div>
 </template>
 
@@ -59,18 +53,21 @@ export default {
   name: 'NavBar',
   data () {
     return {
-      isModalActive: false,
-      isLogin: false,
-      isRegister: false
+      user: {}
     }
   },
   components: {
     Login,
     Register
   },
-  methods: {
-    closeModalMaster (payload) {
-      this.isModalActive = payload.opened
+  created () {
+    this.user = localStorage.getObj('user')
+    if (this.user == null) {
+      this.user = {}
+      this.user.email = ''
+      this.user.password = ''
+      this.user.name = ''
+      this.user.cargo = ''
     }
   }
 }

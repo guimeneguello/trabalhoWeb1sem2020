@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <NavBar />
-    <Content />
+    <ContentServices />
     <Footer />
   </div>
 </template>
@@ -9,14 +9,14 @@
 <script>
 // @ is an alias to /src
 import NavBar from '@/components/NavBar.vue'
-import Content from '@/components/Content.vue'
+import ContentServices from '@/components/ContentServices.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
   components: {
     NavBar,
-    Content,
+    ContentServices,
     Footer
   }
 }
