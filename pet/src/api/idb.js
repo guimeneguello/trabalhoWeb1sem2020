@@ -28,6 +28,17 @@ export default {
         db.createObjectStore('services', { autoIncrement: true, keyPath: 'id' })
         db.createObjectStore('apoiments', { autoIncrement: true, keyPath: 'id' })
         db.createObjectStore('products', { autoIncrement: true, keyPath: 'id' })
+
+        this.saveData({
+          table: 'users',
+          data: {
+            name: 'admin',
+            cargo: 'admin',
+            email: 'admin@pet.com',
+            password: 'admin',
+            repet_password: 'admin'
+          }
+        })
       }
     })
   },

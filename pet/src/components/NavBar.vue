@@ -39,7 +39,7 @@
         <router-link to="/services">
           <b-button class="btn-login">Serviços</b-button>
         </router-link>
-        <Apoiment v-if="user.name.length > 0" :user="user"/>
+        <Apoiment v-if="user.cargo == 'client'" :user="user"/>
       </b-navbar-item>
     </b-navbar>
   </div>

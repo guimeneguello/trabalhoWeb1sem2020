@@ -8,6 +8,17 @@
             <h1>Register</h1>
             <h3></h3>
 
+          <b-field label="Cargo">
+              <b-select
+              placeholder="Selecione um cargo"
+              expanded
+              v-model="struct.data.cargo"
+              name="cargo"
+            >
+              <option key="admin" value="admin">Administrador</option>
+              <option key="client" value="client">Cliente</option>
+            </b-select>
+            </b-field>
           <b-field label="Name">
               <b-input
                 type="name"
