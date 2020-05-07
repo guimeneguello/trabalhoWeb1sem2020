@@ -78,7 +78,7 @@ export default {
       this.$store.dispatch('saveData', this.struct)
       this.$buefy.toast.open({
         duration: 5000,
-        message: 'Usuário adicionado com sucesso!',
+        message: 'Usuário adicionado com sucesso! Por favor recarregue a página.',
         position: 'is-top-right',
         type: 'is-success'
       })
