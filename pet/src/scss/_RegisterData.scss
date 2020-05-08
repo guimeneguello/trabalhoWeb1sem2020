@@ -11,3 +11,17 @@ img.uploading-image {
     max-height: 100px !important;
     border-radius: 50%;
 }
+
+.campo-extra{
+    padding: 10px !important;
+}
+
+.add-campo-extra{
+    background-color: $cor-principal !important;
+    border-bottom: 5px $cor-principal solid !important;
+}
+
+.add-campo-extra:hover{
+    color: $cor-secundaria !important;
+    border-bottom: 5px $cor-secundaria solid !important;
+}

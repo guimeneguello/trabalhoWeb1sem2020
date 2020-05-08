@@ -102,3 +102,16 @@ img.collection-image{
     width: 100px;
   }
 }
+
+
+button.button.btn-save-data{
+  color: $yellow-1;
+  background-color: $cor-secundaria;
+  margin-left: 45px;
+  border-bottom: 5px $cor-secundaria solid;
+}
+
+button.button.btn-save-data:hover{
+  color: $cor-principal;
+  border-bottom: 5px $cor-principal solid;
+}

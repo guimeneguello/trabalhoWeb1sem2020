@@ -48,7 +48,7 @@
               ></b-input>
             </b-field>
 
-            <button @click="register()" class="button is-primary">Cadastrar</button>
+            <button @click="register()" class="button btn-save-data">Cadastrar</button>
           </div>
         </div>
       </div>

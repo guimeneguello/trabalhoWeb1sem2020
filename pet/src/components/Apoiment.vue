@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-button class="btn-login" @click="isOpened=true">Marque um Serviço</b-button>
+    <b-button class="btn-data" @click="isOpened=true">Marque um Serviço</b-button>
     <b-modal :active.sync="isOpened">
       <div class="card">
         <div class="card-content">
@@ -38,7 +38,7 @@
               </b-select>
             </b-field>
 
-            <button @click="apoiment()" class="button is-primary">Agendar</button>
+            <button @click="apoiment()" class="button btn-save-data">Agendar</button>
           </div>
         </div>
       </div>

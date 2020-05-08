@@ -16,7 +16,7 @@
             <b-input type="password" v-model="user.password" name="password"></b-input>
           </b-field>
 
-          <button @click="login()" class="button is-primary">Entrar</button>
+          <button @click="login()" class="button btn-save-data">Entrar</button>
         </div>
       </div>
     </div>

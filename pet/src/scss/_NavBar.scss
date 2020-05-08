@@ -13,15 +13,6 @@ button.button {
 a.navbar-item.columns.slogan, a.navbar-item.columns.slogan:hover {
   background-color: $cor-secundaria;
   color: $yellow-1;
-  button.button {
-    background-color: $cor-principal;
-    color: $yellow-1;
-    margin: 5px 15px 5px 0;
-    border-radius: unset;
-    width: 95px;
-    padding-bottom: 0.375em;
-    padding-top: 0.375em;
-  }
 
   p{
     padding: 0 20px;
@@ -51,6 +42,25 @@ a.navbar-item.columns.infos p {
 
   .navbar-start {
     margin-left: 10px;
+    a button.button{
+      background-color: $cor-principal;
+      color: $yellow-1;
+      padding-bottom: calc(0.375em - 5px);
+      padding-top: 0.375em;
+      border-bottom: 5px $cor-principal solid;
+    }
+  
+    a.router-link-exact-active.router-link-active{
+      button.button{
+        color: $cor-secundaria;
+        font-weight: 300px;
+      }
+    }
+  
+    a.navbar-item.menu button.button:hover{
+      color: $cor-secundaria;
+      border-bottom: 5px $cor-secundaria solid;
+    }
   }
 
   a.navbar-item.menu {
@@ -60,41 +70,37 @@ a.navbar-item.columns.infos p {
   a.navbar-item.menu, a.navbar-item.menu:hover, .navbar-end, .navbar-end:hover{
     background-color: $cor-principal;
   }
+}
 
-  button.button {
-    background-color: $cor-principal;
-    color: $yellow-1;
-    margin: 0;
-    border-radius: unset;
-    height: 45px;
-    border-bottom: 5px $cor-principal solid;
-    padding-bottom: calc(0.375em - 5px);
-    padding-top: 0.375em;
-  }
+button.button {
+  margin: 0;
+  border-radius: unset;
+  height: 45px;
+  padding-bottom: calc(0.375em - 5px);
+  padding-top: 0.375em;
+}
 
-  a.router-link-exact-active.router-link-active{
-    button.button{
-      color: $cor-secundaria;
-      font-weight: 300px;
-    }
-  }
+.btn-login button.button {
+  background-color: $cor-principal;
+  color: $yellow-1;
+  margin: 5px 15px 5px 0;
+  border-radius: unset;
+  width: 95px;
+  height: 40px;
+  padding-bottom: 0.375em;
+  padding-top: 0.375em;
+}
 
-  a.navbar-item.menu button.button:hover{
-    color: $cor-secundaria;
-    border-bottom: 5px $cor-secundaria solid;
-  }
+.navbar-end button.button.btn-data{
+  color: $yellow-1;
+  background-color: $cor-secundaria;
+  margin-right: 45px;
+  border-bottom: 5px $cor-secundaria solid;
+}
 
-  .navbar-end button.button{
-    background-color: $cor-secundaria;
-    margin-right: 45px;
-    border-bottom: 5px $cor-secundaria solid;
-  }
-
-  .navbar-end button.button:hover{
-    color: $cor-principal !important;
-    border-bottom: 5px $cor-principal solid !important;
-
-  }
+.navbar-end button.button.btn-data:hover{
+  color: $cor-principal;
+  border-bottom: 5px $cor-principal solid;
 }
 
 nav.navbar{
