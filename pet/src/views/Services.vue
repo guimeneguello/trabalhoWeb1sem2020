@@ -1,7 +1,10 @@
 <template>
   <div class="home">
     <NavBar />
-    <ContentColection class="body-content" colection='services' stringColection='Serviços' permission='admin'/>
+    <div class="body-content" >
+      <ContentColection colection='services' stringColection='Serviços' permission='admin'/>
+      <ScheduledServices />
+    </div>
     <Footer />
   </div>
 </template>
@@ -10,6 +13,7 @@
 // @ is an alias to /src
 import NavBar from '@/components/NavBar.vue'
 import ContentColection from '@/components/ContentColection.vue'
+import ScheduledServices from '@/components/ScheduledServices.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
@@ -17,6 +21,7 @@ export default {
   components: {
     NavBar,
     ContentColection,
+    ScheduledServices,
     Footer
   }
 }

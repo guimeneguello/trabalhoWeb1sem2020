@@ -38,13 +38,14 @@
   box-shadow: 2px 3px 5px 0px rgba(146, 146, 146, 0.75);
 }
 
-.collection-image{
-  float: left;
-  display: table-cell;
+img.collection-image{
   border-radius: 50%;
   height: 100px;
   width: 100px;
 }
+
+
+
 .collection-card{
   padding: 30px !important;
 }
@@ -81,5 +82,23 @@
       background-color: $red-2;
       color: $yellow-1;
     }
+  }
+}
+
+.collection-image{
+  float: left;
+  display: table-cell;
+
+  p{
+    margin: unset;
+    text-align: center;
+    color: $cor-secundaria;
+    font-weight: 500;
+  }
+
+  img{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
   }
 }

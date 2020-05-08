@@ -27,6 +27,17 @@
               </b-select>
             </b-field>
 
+            <b-field label="Seu pet">
+              <b-select
+                placeholder="Selecione um pet"
+                expanded
+                v-model="struct.data.pet_id"
+                name="pet"
+              >
+                <option v-for="pet in pets" :key="pet.id" :value="pet.id">{{pet.name}}</option>
+              </b-select>
+            </b-field>
+
             <button @click="apoiment()" class="button is-primary">Agendar</button>
           </div>
         </div>
@@ -44,6 +55,7 @@ export default {
     return {
       isOpened: false,
       services: {},
+      pets: {},
       struct: {
         table: 'apoiments',
         data: {
@@ -55,6 +67,9 @@ export default {
   created () {
     this.$store.dispatch('getDatas', 'services')
     this.services = localStorage.getObj('services')
+
+    this.$store.dispatch('getDatas', 'pets')
+    this.pets = localStorage.getObj('pets')
   },
   methods: {
     apoiment () {
