@@ -40,7 +40,7 @@ export default {
       this.$emit('reload')
       this.$buefy.toast.open({
         duration: 5000,
-        message: 'Login realisado com sucesso, por favor recarregue a pagina!',
+        message: 'Login realizado com sucesso, por favor recarregue a pagina!',
         position: 'is-top-right',
         type: 'is-success'
       })
