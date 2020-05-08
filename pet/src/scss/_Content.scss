@@ -52,9 +52,11 @@ img.collection-image{
 
 .collection-info{
   color: #4c4c4c;
-  padding: 20px;
+  padding: 20px 20px 50px 20px;
   min-height: 200px;
   border-radius: 15px;
+  cursor: pointer;
+
   img{
     margin-right: 15px;
   }
@@ -76,12 +78,35 @@ img.collection-image{
     margin: 20px 0 0;
     font-weight: 300;
   }
+}
 
-  .collection-bottons{
-    button.button{
-      background-color: $red-2;
-      color: $yellow-1;
-    }
+.collection-bottons{
+  margin-top: -50px;
+
+  button.button.btn-delete{
+    margin-left: -10px;
+    background-color: $yellow-1;
+    color: $red-2;
+    border-bottom: 5px $red-2 solid;
+    border-radius: 8px;
+  }
+
+  button.button.btn-delete:hover{
+    background-color: $red-2;
+    color: $yellow-1;
+  }
+
+  button.button.btn-edit{
+    margin-left: 10px;
+    background-color: $yellow-g;
+    color: $cor-secundaria;
+    border-bottom: 5px $cor-secundaria solid;
+    border-radius: 8px;
+  }
+
+  button.button.btn-edit:hover{
+    background-color: $cor-secundaria;
+    color: $yellow-g;
   }
 }
 

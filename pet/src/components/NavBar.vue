@@ -46,9 +46,9 @@
 
       <b-navbar-item slot="end" class="menu">
         <Apoiment v-if="user.cargo == 'client'" :user="user"/>
-        <RegisterData v-if="user.cargo == 'client'" :user="user" colection='pets' stringColection='Pet'/>
-        <RegisterData v-if="user.cargo == 'admin'" :user="user" colection='services' stringColection='Serviço'/>
-        <RegisterData v-if="user.cargo == 'admin'" :user="user" colection='products' stringColection='Produto'/>
+        <RegisterData v-if="user.cargo == 'client'" :user="user" colection='pets' stringColection='Pet' :isRegister="true"/>
+        <RegisterData v-if="user.cargo == 'admin'" :user="user" colection='services' stringColection='Serviço'  :isRegister="true"/>
+        <RegisterData v-if="user.cargo == 'admin'" :user="user" colection='products' stringColection='Produto'  :isRegister="true"/>
       </b-navbar-item>
     </b-navbar>
   </div>

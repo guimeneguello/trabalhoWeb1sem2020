@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-button class="btn-login" @click="isOpened=true">Cadastre um {{ stringColection }}</b-button>
+    <b-button v-if="isRegister" class="btn-data" @click="isOpened=true">Cadastre um {{ stringColection }}</b-button>
     <b-modal :active.sync="isOpened">
       <div class="card">
         <div class="card-content">
@@ -18,12 +18,32 @@
             <b-field label="Descrição">
               <b-input maxlength="280" type="textarea" v-model="struct.data.descricao"></b-input>
             </b-field>
-            <b-field label="Imagem">
-              <input type="file" accept="image/jpeg" @change="uploadImage"/>
-              <img :src="struct.data.previewImage" class="uploading-image"/>
-            </b-field>
 
-            <button @click="save()" class="button is-primary">Salvar</button>
+            <div class="columns flex-wrap">
+              <b-field class="column is-4 campo-extra" label="Imagem">
+                <img :src="struct.data.previewImage" class="uploading-image"/>
+                <input type="file" accept="image/jpeg" @change="uploadImage"/>
+              </b-field>
+
+              <div class="column is-2 campo-extra" v-for="(row, index) in struct.data.campos" :key="index">
+                <b-field label="Campo Nome">
+                  <b-input v-model="row.nome"></b-input>
+                </b-field>
+                <b-field label="Campo Valor">
+                  <b-input v-model="row.valor"></b-input>
+                </b-field>
+                <b-field>
+                  <a v-on:click="removeElement(index);"
+                    style="cursor: pointer"
+                  >Remover</a>
+                </b-field>
+              </div>
+            </div>
+
+            <b-button class="button add-campo-extra" @click="addRow()">
+              <p>ADICIONAR CAMPO</p>
+            </b-button>
+            <button class="button btn-save-data" @click="save()">Salvar</button>
           </div>
         </div>
       </div>
@@ -35,19 +55,35 @@
 
 export default {
   name: 'RegisterData',
-  props: ['user', 'colection', 'stringColection'],
+  props: ['user', 'colection', 'stringColection', 'isOpened', 'isRegister'],
+  created () {
+    this.addRow()
+    this.$parent.$on('update', this.setValue)
+  },
   data () {
     return {
-      isOpened: false,
       struct: {
         table: this.colection,
         data: {
-          previewImage: null
+          previewImage: null,
+          campos: []
         }
       }
     }
   },
   methods: {
+    setValue: function (singleData) {
+      this.struct.data = singleData
+    },
+    addRow: function () {
+      this.struct.data.campos.push({
+        nome: '',
+        valor: ''
+      })
+    },
+    removeElement: function (index) {
+      this.struct.data.campos.splice(index, 1)
+    },
     save () {
       if (this.user.cargo === 'client') {
         this.struct.data.user_id = this.user.id
